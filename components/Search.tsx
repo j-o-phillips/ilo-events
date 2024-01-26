@@ -8,7 +8,7 @@ const Search = () => {
       className="
     border-[1px]
     w-full
-    md:w-auto
+    md:w-1/3
     py-2
     rounded-full
     shadow-sm
@@ -19,7 +19,7 @@ const Search = () => {
     >
       <div className="flex flex-row items-center justify-between gap-2 mx-2">
         <div>
-          <input type="text" className="mx-4" />
+          <input type="text" className="mx-4 outline-none bg-transparent" />
         </div>
         <div
           className="

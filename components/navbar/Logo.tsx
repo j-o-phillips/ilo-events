@@ -9,10 +9,10 @@ const Logo = () => {
   return (
     <Image
       alt="Logo"
-      className="hidden md:block cursor-pointer"
-      height="100"
-      width="100"
-      src="/images/vercel.svg"
+      className=" cursor-pointer"
+      height="50"
+      width="50"
+      src="/images/ILO_logo_green.png"
       onClick={() => {
         router.push("/");
       }}

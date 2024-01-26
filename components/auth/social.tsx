@@ -18,7 +18,11 @@ export const Social = () => {
         size="lg"
         className="w-full"
         variant="outline"
-        onClick={() => signIn("google")}
+        onClick={() =>
+          signIn("google", {
+            callbackUrl: "/search",
+          })
+        }
       >
         <FcGoogle className="h-5 w-5" />
       </Button>
@@ -26,7 +30,11 @@ export const Social = () => {
         size="lg"
         className="w-full"
         variant="outline"
-        onClick={() => signIn("github")}
+        onClick={() =>
+          signIn("github", {
+            callbackUrl: "/search",
+          })
+        }
       >
         <FaGithub className="h-5 w-5" />
       </Button>

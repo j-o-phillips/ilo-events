@@ -23,7 +23,7 @@ export default async function RootLayout({
       <body className={inter.className}>
         <ToasterProvider />
         <Navbar currentUser={currentUser} />
-        {children}
+        <div className="pt-24">{children}</div>
       </body>
     </html>
   );
