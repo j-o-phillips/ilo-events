@@ -16,7 +16,7 @@ const MyEvents = async () => {
         </Link>
       </div>
       {events?.length === 0 ? (
-        <div className="py-2 ">You haven't created any events yet...</div>
+        <div className="py-2 ">You have not created any events yet...</div>
       ) : (
         <div
           className="
