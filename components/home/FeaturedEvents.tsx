@@ -24,7 +24,7 @@ const FeaturedEvents = async () => {
               children and adults, baby gear on demand, and a restorative place
               for parents.
             </p>
-            <Link href="/login" className="font-inter">
+            <Link href="/auth/login" className="font-inter">
               SEARCH ALL EVENTS
             </Link>
           </div>
