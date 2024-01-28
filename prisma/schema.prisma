@@ -22,6 +22,8 @@ model User {
   favoriteIds    String[]  @db.ObjectId
 
   accounts Account[]
+  events   Event[]
+  bookings Booking[]
 }
 
 model Account {
@@ -41,4 +43,32 @@ model Account {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
+}
+
+model Event {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String
+  imageSrc    String
+  createdAt   DateTime @default(now())
+  date        String
+  maxTickets  Int
+  soldTickets Int      @default(0)
+  userid      String   @db.ObjectId
+  price       Int
+
+  user     User      @relation(fields: [userid], references: [id], onDelete: Cascade)
+  bookings Booking[]
+}
+
+model Booking {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
+  eventId   String   @db.ObjectId
+  date      String
+  price     Int
+  createdAt DateTime @default(now())
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  event Event @relation(fields: [eventId], references: [id], onDelete: Cascade)
 }

@@ -10,7 +10,7 @@ interface EventFormProps {
 const EventForm: React.FC<EventFormProps> = ({ onSubmit }) => {
   return (
     <div className="pt-8 flex flex-col gap-4">
-      <Input id="name" type="text" onChange={onSubmit} label="Event Name" />
+      <Input id="title" type="text" onChange={onSubmit} label="Event Name" />
       <Input
         id="description"
         type="text"
@@ -18,8 +18,21 @@ const EventForm: React.FC<EventFormProps> = ({ onSubmit }) => {
         label="Event Description"
         textarea
       />
+      <Input id="date" type="text" onChange={onSubmit} label="Event Date" />
+      <Input
+        id="price"
+        type="number"
+        onChange={onSubmit}
+        label="Ticket Price"
+      />
+      <Input
+        id="maxTickets"
+        type="number"
+        onChange={onSubmit}
+        label="Maximum Tickets Available"
+      />
     </div>
   );
 };
-//ghghgh
+
 export default EventForm;

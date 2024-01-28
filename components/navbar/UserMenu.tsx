@@ -23,11 +23,11 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative font-inter">
       <div className="flex flex-row items-center gap-3">
         <div
           onClick={toggleOpen}
-          className="p-4 py-1 px-2 border-[1px] border-neutral-200 flex
+          className="p-4 py-1 px-2 border-[1px] border-primary flex
         flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition
         "
         >
@@ -50,12 +50,20 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
             {currentUser ? (
               <>
                 <Link
+                  href="/search"
+                  className="
+                px-4 py-3 hover:bg-neutral-100 transition font-semibold
+                "
+                >
+                  SEARCH EVENTS
+                </Link>
+                <Link
                   href="/myevents"
                   className="
                 px-4 py-3 hover:bg-neutral-100 transition font-semibold
                 "
                 >
-                  My events
+                  MY EVENTS
                 </Link>
                 <Link
                   href="/mybookings"
@@ -63,19 +71,19 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                 px-4 py-3 hover:bg-neutral-100 transition font-semibold
                 "
                 >
-                  My bookings
+                  MY BOOKINGS
                 </Link>
 
                 <hr />
-                <MenuItem onClick={() => signOut()} label="Logout" />
+                <MenuItem onClick={() => signOut()} label="LOGOUT" />
               </>
             ) : (
               <>
                 <LoginButton>
-                  <MenuItem onClick={() => {}} label="Login" />
+                  <MenuItem onClick={() => {}} label="LOGIN" />
                 </LoginButton>
                 <RegisterButton>
-                  <MenuItem onClick={() => {}} label="Signup" />
+                  <MenuItem onClick={() => {}} label="SIGNUP" />
                 </RegisterButton>
               </>
             )}
