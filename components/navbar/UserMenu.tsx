@@ -50,6 +50,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
             {currentUser ? (
               <>
                 <Link
+                  onClick={toggleOpen}
                   href="/search"
                   className="
                 px-4 py-3 hover:bg-neutral-100 transition font-semibold
@@ -58,6 +59,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                   SEARCH EVENTS
                 </Link>
                 <Link
+                  onClick={toggleOpen}
                   href="/myevents"
                   className="
                 px-4 py-3 hover:bg-neutral-100 transition font-semibold
@@ -66,6 +68,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                   MY EVENTS
                 </Link>
                 <Link
+                  onClick={toggleOpen}
                   href="/mybookings"
                   className="
                 px-4 py-3 hover:bg-neutral-100 transition font-semibold
