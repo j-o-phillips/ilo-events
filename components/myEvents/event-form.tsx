@@ -18,7 +18,7 @@ const EventForm: React.FC<EventFormProps> = ({ onSubmit }) => {
         label="Event Description"
         textarea
       />
-      <Input id="date" type="text" onChange={onSubmit} label="Event Date" />
+      <Input id="date" type="date" onChange={onSubmit} label="Event Date" />
       <Input
         id="price"
         type="number"

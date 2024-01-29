@@ -39,6 +39,7 @@ const EventCard: React.FC<EventCardProps> = ({ data, currentUser }) => {
           />
         </div>
         <div className="font-semibold text-lg">{data.title}</div>
+        <div className="">{data.description}</div>
         <div className="font-light text-neutral-500">{data.date}</div>
         <div className="flex flex-row items-center gap-1">
           <div className="font-semibold">Credits: {data.price}</div>
