@@ -19,6 +19,7 @@ const EventCard: React.FC<EventCardProps> = ({ data, currentUser }) => {
         col-span-1
         cursor-pointer
         group
+        font-ivarReg
         "
     >
       <div className="flex flex-col gap-2 w-full">
@@ -38,11 +39,11 @@ const EventCard: React.FC<EventCardProps> = ({ data, currentUser }) => {
             className="object-cover h-full w-full group-hover:scale-110 transition"
           />
         </div>
-        <div className="font-semibold text-lg">{data.title}</div>
-        <div className="">{data.description}</div>
+        <div className="font-bold text-2xl">{data.title}</div>
+        <div className="text-neutral-500">{data.description}</div>
         <div className="font-light text-neutral-500">{data.date}</div>
         <div className="flex flex-row items-center gap-1">
-          <div className="font-semibold">Credits: {data.price}</div>
+          <div className="font-semibold font-inter">CREDITS: {data.price}</div>
         </div>
       </div>
     </div>

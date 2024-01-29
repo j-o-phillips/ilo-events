@@ -15,6 +15,7 @@ const Search = () => {
     hover:shadow-md
     transition
     cursor-pointer
+   
     "
     >
       <div className="flex flex-row items-center justify-between gap-2 mx-2">
