@@ -9,7 +9,11 @@ const SearchPage = async () => {
   // const currentUser = await getCurrentUser();
 
   if (events.length === 0) {
-    return <div>No Events</div>;
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        No Events
+      </div>
+    );
   }
 
   return (
@@ -26,6 +30,7 @@ const SearchPage = async () => {
       xl:grid-cols-5
       2xl:grid-cols-6
       gap-8
+      
       "
       >
         {events.map((event: any) => {

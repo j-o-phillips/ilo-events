@@ -16,7 +16,9 @@ const MyEvents = async () => {
         </Link>
       </div>
       {events?.length === 0 ? (
-        <div className="py-2 ">You have not created any events yet...</div>
+        <div className="flex justify-center items-center min-h-80">
+          You have not created any events yet...
+        </div>
       ) : (
         <div
           className="

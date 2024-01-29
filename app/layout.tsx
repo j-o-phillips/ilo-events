@@ -36,6 +36,7 @@ export default async function RootLayout({
         className={`${inter.variable} ${ivarReg.variable} ${ivarIta.variable}`}
       >
         <ToasterProvider />
+
         <Navbar currentUser={currentUser} />
         <div className="pt-24">{children}</div>
         <Footer />
