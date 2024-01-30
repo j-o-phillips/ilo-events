@@ -1,7 +1,7 @@
 const LoginWidget = () => {
   return (
     <>
-      <div className="h-[150px] w-[150px] bg-secondary fixed rounded-full right-8 top-28 shadow-xl z-10 ">
+      <div className=" h-[100px] w-[100px] md:h-[150px] md:w-[150px] bg-secondary fixed rounded-full right-8 top-28 shadow-xl z-10 ">
         <svg
           viewBox="0 0 110 110"
           xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +23,7 @@ const LoginWidget = () => {
           </text>
         </svg>
       </div>
-      <div className="w-[34px] fixed top-[161px] right-[90px] z-20">
+      <div className="w-[24px] md:w-[34px] fixed top-[146px] right-[70px] md:top-[161px] md:right-[90px] z-20">
         <img src="./images/ILO_sign_green.png" alt="iloSign" />
       </div>
     </>

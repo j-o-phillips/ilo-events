@@ -2,7 +2,7 @@ import { FaFacebook, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 
 const SocialIcons = () => {
   return (
-    <div className="flex flex-row gap-24 flex-1 justify-end items-end">
+    <div className="flex flex-row gap-24 flex-1 justify-center md:justify-end items-end">
       <div className="flex flex-col gap-3 ">
         <FaFacebook size={50} />
         <FaInstagramSquare size={50} />

@@ -16,7 +16,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
     <div className="fixed w-full z-10 shadow-sm bg-background">
       <div className="py-4 border-black border-b-[1px]">
         <Container>
-          <div className="flex flex-row items-center justify-between gap-3 md:gap-0">
+          <div className="flex flex-row items-center justify-between">
             <Logo />
             <UserMenu currentUser={currentUser} />
           </div>

@@ -43,10 +43,10 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
         <div
           className="
             absolute rounded-xl shadow-md w-[30vw] md:w-[20vw] lg:w-[10vw] border border-neutral-200
-            overflow-hidden right-0 top-16 text-sm  bg-white
+            overflow-hidden right-0 top-16 text-sm  bg-white 
             "
         >
-          <div className="flex flex-col cursor-pointer bg-background">
+          <div className="flex flex-col cursor-pointer bg-background ">
             {currentUser ? (
               <>
                 <Link

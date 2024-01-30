@@ -9,10 +9,12 @@ const FeaturedEvents = async () => {
   return (
     <div className="bg-primary text-white py-20 font-ivarReg">
       <Container>
-        <div className="flex flex-row justify-around gap-8">
-          <div className="flex flex-col justify-between w-[400px]">
-            <h3 className="text-5xl">Featured Events</h3>
-            <p className="text-lg">
+        <div className="flex flex-row justify-around gap-8 flex-wrap">
+          <div className="flex flex-col md:justify-between justify-center gap-8 md:gap-0 w-full sm:w-2/3 md:w-1/3 ">
+            <h3 className="text-4xl md:text-5xl text-center md:text-left">
+              Featured Events
+            </h3>
+            <p className="text-mdmd:text-lg">
               We have experienced traveling with babies and toddlers first-hand.
               It’s both magical and chaotic. Our retreats are designed for
               families that long for quality rest. Several times a year, we
@@ -28,7 +30,7 @@ const FeaturedEvents = async () => {
               SEARCH ALL EVENTS
             </Link>
           </div>
-          <div className="w-[400px]">
+          <div className="w-[300px] sm:w-auto py-12">
             {featuredEvents[0] && <EventCard data={featuredEvents[0]} />}
           </div>
           {featuredEvents[1] && <EventCard data={featuredEvents[0]} />}
