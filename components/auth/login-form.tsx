@@ -45,7 +45,7 @@ export const LoginForm = () => {
       signIn("credentials", { ...values, redirect: false }).then((callback) => {
         if (callback?.ok) {
           toast.success("Logged in");
-          router.push("/home");
+          router.push("/search");
         }
 
         if (callback?.error) {

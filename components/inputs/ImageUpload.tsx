@@ -42,8 +42,10 @@ const ImageUpload = ({ onChange, value }: ImageUploadProps) => {
         border-dashed
         border-2
       
-        w-[500px]
-        h-[350px]
+        w-[300px]
+        h-[225px]
+        md:w-[500px]
+        md:h-[350px]
         border-neutral-300
         flex
         flex-col
