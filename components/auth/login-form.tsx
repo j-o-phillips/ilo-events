@@ -46,6 +46,7 @@ export const LoginForm = () => {
         if (callback?.ok) {
           toast.success("Logged in");
           router.push("/search");
+          router.refresh();
         }
 
         if (callback?.error) {
@@ -60,7 +61,7 @@ export const LoginForm = () => {
       headerLabel="Welcome Back"
       backButtonLabel="Don't have an account?"
       backButtonHref="/auth/register"
-      showSocial
+      //showSocial
     >
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -108,6 +109,14 @@ export const LoginForm = () => {
             LOGIN
           </Button>
         </form>
+        <Button
+          className="w-full my-3"
+          onClick={() =>
+            onSubmit({ email: "guest@example.com", password: "guest1" })
+          }
+        >
+          LOGIN AS GUEST
+        </Button>
       </Form>
     </CardWrapper>
   );
