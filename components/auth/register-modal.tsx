@@ -27,55 +27,66 @@ enum STEPS {
   ACCOUNTTYPE = 0,
   EMAIL = 1,
   PASSWORD = 2,
+  NAME = 3,
+  PAYMENT = 4,
 }
 
 const RegisterModal = ({ title }: ModalProps) => {
   const form = useForm<z.infer<typeof RegisterSchema>>({
     resolver: zodResolver(RegisterSchema),
     defaultValues: {
-      email: "jake@phillips.com",
-      password: "dfdfdfdfdd",
-      name: "",
+      email: "",
+      password: "fggfgfgg",
+      name: "ffgfgfd",
     },
   });
 
   const [step, setStep] = useState(STEPS.EMAIL);
 
+  const onNext = () => {
+    setStep((prev) => prev + 1);
+    console.log(step);
+  };
+
   const onSubmit = (values: z.infer<typeof RegisterSchema>) => {
     console.log(values);
   };
 
-  let body = (
-    <div>
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)}>
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Name</FormLabel>
-                <FormControl>
-                  <Input {...field} placeholder="John Doe" />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <Button type="submit" className="w-full" disabled={false}>
-            CREATE AN ACCOUNT
-          </Button>
-        </form>
-      </Form>
-    </div>
-  );
+  let body;
+
+  if (step === STEPS.EMAIL) {
+    body = (
+      <div>
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{step}</FormLabel>
+              <FormControl>
+                <Input {...field} placeholder="John@Doe.com" />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button onClick={onNext} className="w-full" disabled={false}>
+          CREATE AN ACCOUNT
+        </Button>
+      </div>
+    );
+  }
 
   return (
     <Card>
       <CardHeader>
         <Header label="Create Account" />
       </CardHeader>
-      <CardContent>{body}</CardContent>
+      <CardContent>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)}>{body}</form>
+        </Form>
+      </CardContent>
 
       <CardFooter>
         <BackButton label="Already have an account?" href="/auth/login" />

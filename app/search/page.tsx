@@ -1,26 +1,46 @@
+"use client";
+
 import Container from "@/components/Container";
 import Search from "@/components/Search";
 import getEvents from "@/actions/getEvents";
-import getCurrentUser from "@/actions/getCurrentUser";
+import { getSession } from "@/actions/getCurrentUser";
 import EventCard from "@/components/EventCard";
+import { redirect } from "next/navigation";
+import searchEvents from "@/actions/searchEvents";
+import { useEffect, useState } from "react";
+import type { Event } from "@prisma/client";
 
-const SearchPage = async () => {
-  const events = await getEvents();
-  // const currentUser = await getCurrentUser();
+const SearchPage = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [events, setEvents] = useState<Event[]>([]);
 
-  if (events.length === 0) {
-    return (
-      <div className="flex justify-center items-center min-h-screen">
-        No Events
-      </div>
-    );
-  }
+  useEffect(() => {
+    searchEvents(searchTerm)
+      .then((events) => {
+        setEvents(events);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [searchTerm]);
 
   return (
     <Container>
-      <Search />
-      <div
-        className="
+      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      {isLoading && (
+        <div className="flex justify-center items-center min-h-80">
+          Loading...
+        </div>
+      )}
+      {events.length === 0 && !isLoading ? (
+        <div className="flex justify-center items-center min-h-80">
+          No Events
+        </div>
+      ) : (
+        <div
+          className="
       pt-10
       grid
       grid-cols-1
@@ -32,11 +52,12 @@ const SearchPage = async () => {
       gap-8
       
       "
-      >
-        {events.map((event: any) => {
-          return <EventCard key={event.id} data={event} />;
-        })}
-      </div>
+        >
+          {events.map((event: any) => {
+            return <EventCard key={event.id} data={event} />;
+          })}
+        </div>
+      )}
     </Container>
   );
 };

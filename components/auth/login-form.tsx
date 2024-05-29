@@ -106,7 +106,7 @@ export const LoginForm = () => {
           <FormError message={error} />
           <FormSuccess message={success} />
           <Button type="submit" className="w-full" disabled={isPending}>
-            LOGIN
+            {isPending ? "Logging in..." : "Login"}
           </Button>
         </form>
         <Button
@@ -114,8 +114,9 @@ export const LoginForm = () => {
           onClick={() =>
             onSubmit({ email: "guest@example.com", password: "guest1" })
           }
+          disabled={isPending}
         >
-          LOGIN AS GUEST
+          {isPending ? "Logging in..." : "Login as Guest"}
         </Button>
       </Form>
     </CardWrapper>

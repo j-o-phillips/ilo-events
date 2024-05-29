@@ -1,12 +1,21 @@
+import { getSession } from "@/actions/getCurrentUser";
 import getEventsByUser from "@/actions/getEventsByUser";
 import Container from "@/components/Container";
 import EventCard from "@/components/EventCard";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 const MyEvents = async () => {
   const events = await getEventsByUser();
   console.log(events);
+
+  //Server Route protection
+  const session = await getSession();
+
+  if (!session) {
+    redirect("/");
+  }
 
   return (
     <Container>

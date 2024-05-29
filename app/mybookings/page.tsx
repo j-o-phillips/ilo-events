@@ -12,8 +12,13 @@ const MyBookings = async () => {
 
   return (
     <Container>
-      <div
-        className="
+      {bookings?.length === 0 ? (
+        <div className="flex justify-center items-center min-h-80">
+          You have not created any events yet...
+        </div>
+      ) : (
+        <div
+          className="
 pt-10
 grid
 grid-cols-1
@@ -24,11 +29,12 @@ xl:grid-cols-5
 2xl:grid-cols-6
 gap-8
 "
-      >
-        {bookings?.map((booking: any) => {
-          return <BookingCard key={booking.id} data={booking.event} />;
-        })}
-      </div>
+        >
+          {bookings?.map((booking: any) => {
+            return <BookingCard key={booking.id} data={booking.event} />;
+          })}
+        </div>
+      )}
     </Container>
   );
 };

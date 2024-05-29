@@ -30,10 +30,11 @@ const FeaturedEvents = async () => {
               SEARCH ALL EVENTS
             </Link>
           </div>
-          <div className="w-[300px] sm:w-auto py-12">
-            {featuredEvents[0] && <EventCard data={featuredEvents[0]} />}
-          </div>
-          {featuredEvents[1] && <EventCard data={featuredEvents[0]} />}
+          {featuredEvents.slice(0, 2).map((event) => (
+            <div className="md:w-[300px]  py-12" key={event.id}>
+              <EventCard data={event} />
+            </div>
+          ))}
         </div>
       </Container>
     </div>
